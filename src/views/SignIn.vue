@@ -59,7 +59,7 @@ export default {
   },
   methods: {
       login() {
-          console.log(this.$cookie)
+        this.$router.push({name: 'Home'})
       }
   }
 };
