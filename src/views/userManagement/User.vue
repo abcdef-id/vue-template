@@ -1,15 +1,5 @@
 <template>
 <div style="margin-top: -15px">
-    <mdb-edge-header color="teal darken-2">
-      <div class="category-page-background"></div>
-    </mdb-edge-header>
-    <mdb-container class="free-bird">
-      <mdb-row>
-        <mdb-col md="8" class="mx-auto">
-          
-        </mdb-col>
-      </mdb-row>
-    </mdb-container>
         <mdb-container>
             <mdb-container>
                 <section class="demo-section">
@@ -21,26 +11,18 @@
 </template>
 
 <script>
-import { mdbContainer, mdbRow, mdbCol, mdbEdgeHeader } from 'mdbvue';
+import { mdbContainer } from 'mdbvue';
 
 export default {
   name: 'FormsPage',
   components: {
-    mdbContainer,
-    mdbRow,
-    mdbCol,
-    mdbEdgeHeader
+    mdbContainer
+    
   },
   data() {
     return {
-      showModal: false,
       guests: 4
     };
-  },
-  methods: {
-      login() {
-        this.$router.push({name: 'Home'})
-      }
   }
 };
 </script>

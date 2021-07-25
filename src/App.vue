@@ -1,7 +1,7 @@
 <template>
-  <div id="app" :class="$store.state.docs && 'flyout'">
+  <div id="app" :class="$store.state.isLoggedIn && 'flyout'">
     <mdb-navbar
-      v-if="$store.state.docs"
+      v-if="$store.state.isLoggedIn"
       id="main-navbar"
       dark
       position="top"
@@ -19,6 +19,20 @@
           <mdb-nav-item to="/home">
             <strong>Home</strong>
           </mdb-nav-item>
+          <mdb-dropdown tag="li" class="nav-item">
+            <mdb-dropdown-toggle slot="toggle" tag="a" navLink waves-fixed><strong>Admin</strong></mdb-dropdown-toggle>
+            <mdb-dropdown-menu>
+              <mdb-dropdown-item to="/user">User</mdb-dropdown-item>
+              <mdb-dropdown-item to="/permission">Permission  </mdb-dropdown-item>
+            </mdb-dropdown-menu>
+          </mdb-dropdown>
+          <mdb-tooltip>
+            <span slot="tip">Account</span>
+            <mdb-nav-item
+              to="/account"
+              icon="user"
+            ></mdb-nav-item>
+          </mdb-tooltip>
         </mdb-navbar-nav>
       </mdb-navbar-toggler>
     </mdb-navbar>
@@ -46,7 +60,12 @@ import {
   mdbNavbarNav,
   mdbNavbarToggler,
   mdbNavbarBrand,
-  mdbFooter
+  mdbDropdown,
+  mdbDropdownItem,
+  mdbDropdownMenu,
+  mdbDropdownToggle,
+  mdbFooter,
+  mdbTooltip
 } from "mdbvue";
 
 export default {
@@ -57,7 +76,12 @@ export default {
     mdbNavbarNav,
     mdbNavbarToggler,
     mdbNavbarBrand,
-    mdbFooter
+    mdbDropdown,
+    mdbDropdownItem,
+    mdbDropdownMenu,
+    mdbDropdownToggle,
+    mdbFooter,
+    mdbTooltip
   }
 };
 </script>
